@@ -17,7 +17,7 @@ public class LocalFactory {
                 driver = new ChromeHeadlessDriverManager().getBrowserDriver();
                 break;
             default:
-                throw new BrowserNotSupportedException(browser);
+                throw new mai(browser);
         }
 
         return driver;
