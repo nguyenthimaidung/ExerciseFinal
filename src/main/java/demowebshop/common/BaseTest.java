@@ -17,6 +17,7 @@ public class BaseTest extends BasePage{
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
         return driver;
+
     }
     public WebDriver getDriver() {
         return this.driver;
@@ -73,7 +74,6 @@ public class BaseTest extends BasePage{
             System.out.println("Close browser and clean excutable driver:" + e.getMessage());
         } finally {
             try {
-                //Excutable driver
                 Process process = Runtime.getRuntime().exec(cmd);
                 process.waitFor();
             } catch (IOException | InterruptedException e) {

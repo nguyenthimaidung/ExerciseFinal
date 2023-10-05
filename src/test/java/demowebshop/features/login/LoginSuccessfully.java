@@ -28,8 +28,6 @@ public class LoginSuccessfully extends BaseTest {
     public String[][] dataTest() throws IOException {
         return excelUtil.data("Test data");
     }
-
-
     @Parameters("browser")
     @BeforeMethod
     public void setup(@Optional("CHROME") String browser) {
@@ -45,6 +43,7 @@ public class LoginSuccessfully extends BaseTest {
         login.inputEmail(UserName);
         login.inputPassWord(PassWord);
         login.clickBtnLogin();
+
         }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
