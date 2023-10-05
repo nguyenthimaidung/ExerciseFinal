@@ -1,26 +1,22 @@
 package demowebshop.common;
 
 import demowebshop.FactoryEnviroment.LocalFactory;
+import demowebshop.helper.TestNGListener;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 
 import java.io.IOException;
 import java.time.Duration;
 
+@Listeners(TestNGListener.class)
 public class BaseTest extends BasePage{
     private WebDriver driver;
 
-    public WebDriver getDriverBrowser(String browser, String runType) {
-        if (runType.equals("grid")) {
-            driver = new GirdFactory().createDrive(browser);
-
-        } else {
-            driver = new LocalFactory().createDrive(browser);
-
-        }
+    public WebDriver getDriverBrowser(String browser) {
+        driver = new LocalFactory().createDrive(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
         return driver;
-
     }
     public WebDriver getDriver() {
         return this.driver;
@@ -80,9 +76,7 @@ public class BaseTest extends BasePage{
                 //Excutable driver
                 Process process = Runtime.getRuntime().exec(cmd);
                 process.waitFor();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
         }

@@ -4,8 +4,7 @@
     <parameter name="browser" value="CHROME"/>
     <test name="Test Exercise Final">
         <classes>
-<!--            <class name="com.vmo.nopcommerce.features.homepage.ChangeCurrency"/>-->
-
+            <class name="demowebshop.features.login.LoginSuccessfully"/>
         </classes>
     </test>
 </suite>
