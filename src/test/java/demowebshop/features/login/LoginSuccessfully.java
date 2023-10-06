@@ -43,11 +43,11 @@ public class LoginSuccessfully extends BaseTest {
         login.inputEmail(UserName);
         login.inputPassWord(PassWord);
         login.clickBtnLogin();
-        if (UserName == "hihaha@abc.def" & PassWord == "Abcd@1234") {
+        if(UserName.equals("hihaha@abc.def") && PassWord.equals("Abcd@1234")){
             login.verifyLoginSuccessfully();
-        }else if (UserName == "123456") {
+        }
+        else if (UserName.equals("123456")) {
                 login.verifyMessage1("textCanThay", ExpectedMessage);
-
         }else {
             login.verifyMessage("textCanThay",ExpectedMessage);
         }
