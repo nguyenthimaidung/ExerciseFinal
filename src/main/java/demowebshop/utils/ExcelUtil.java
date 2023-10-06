@@ -100,7 +100,9 @@ public class ExcelUtil {
     }
     public String[][] data(String sheetName) throws EncryptedDocumentException, IOException {
         int rowCount = getRowCount(sheetName);
+        System.out.println("Tổng cột" + rowCount);
         int cellCount = getCellCount(sheetName,1);
+        System.out.println("Tổng hàng" + cellCount);
         String[][] loginData = new String[rowCount][cellCount];
         for (int i = 1; i <= rowCount; i++) {
             for (int j = 1; j < cellCount; j++) {
