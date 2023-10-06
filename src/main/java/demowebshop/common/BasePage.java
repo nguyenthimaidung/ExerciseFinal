@@ -556,7 +556,6 @@ public class BasePage {
         System.out.println(name.contains("do you know"));
     }
 
-
     private String getDynamicLocator(String locator, String[] params) {
         return String.format(locator, (Object[]) params);
     }

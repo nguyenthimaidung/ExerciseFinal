@@ -6,5 +6,8 @@ public class PageGenerator {
     public static LoginPageObject getLoginPageObject(WebDriver driver){
         return new LoginPageObject(driver);
     }
+    public static BooksPageObject getBookPageObject(WebDriver driver){
+        return new BooksPageObject(driver);
+    }
 
 }
