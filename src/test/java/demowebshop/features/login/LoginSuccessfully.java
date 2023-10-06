@@ -43,8 +43,15 @@ public class LoginSuccessfully extends BaseTest {
         login.inputEmail(UserName);
         login.inputPassWord(PassWord);
         login.clickBtnLogin();
+        if (UserName == "hihaha@abc.def" & PassWord == "Abcd@1234") {
+            login.verifyLoginSuccessfully();
+        }else if (UserName == "123456") {
+                login.verifyMessage1("textCanThay", ExpectedMessage);
 
+        }else {
+            login.verifyMessage("textCanThay",ExpectedMessage);
         }
+    }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         cleanBrowserAndDriver();
