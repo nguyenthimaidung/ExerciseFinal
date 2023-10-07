@@ -536,6 +536,12 @@ public class BasePage {
         explicit.until(ExpectedConditions.invisibilityOfElementLocated(getXPathLocator(locator)));
 
     }
+    public void waitForElementUnDisplay(WebDriver driver, String locator) {
+        explicit = new WebDriverWait(driver, Duration.ofSeconds(longTimeOut));
+        overrideImplicitTimeOut(driver, shortTimeOut);
+        explicit.until(ExpectedConditions.invisibilityOfElementLocated(getXPathLocator(locator)));
+
+    }
 
     public void waitForElementInvisible(WebDriver driver, String locator, String... params) {
         locator = getDynamicLocator(locator, params);

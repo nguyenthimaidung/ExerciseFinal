@@ -28,7 +28,10 @@ public class Buy2BooksHighestRated extends BaseTest {
         books.gotoURL("https://demowebshop.tricentis.com/");
         books.verifyTitle("Demo Web Shop");
         books.clickTagBooks();
-        books.addToCart();
+        books.verifyTitle("Demo Web Shop. Books");
+        books.addToCartAndVerifyAmount();
+        books.hoverOnShoppingCart();
+        books.verifyBooksOnShoppingCart();
 
     }
     @AfterMethod(alwaysRun = true)

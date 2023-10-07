@@ -9,5 +9,8 @@ public class PageGenerator {
     public static BooksPageObject getBookPageObject(WebDriver driver){
         return new BooksPageObject(driver);
     }
+    public static CartPageObject getCartPageObject(WebDriver driver){
+        return new CartPageObject(driver);
+    }
 
 }
