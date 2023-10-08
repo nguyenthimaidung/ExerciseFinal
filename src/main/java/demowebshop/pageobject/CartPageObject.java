@@ -28,9 +28,7 @@ public class CartPageObject extends BaseTest {
 
         waitForElementUnDisplay(driver,CartPageUI.ICON_LOADING);
         String getTitle = driver.getTitle();
-        System.out.println(getTitle);
         if(getTitle.equals("Demo Web Shop")){
-            System.out.println(getTitle);
             sleepInSecond(10);
             refreshCurrentPage(driver);
         }else{

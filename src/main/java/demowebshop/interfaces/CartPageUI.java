@@ -14,7 +14,7 @@ public class CartPageUI {
     public static String BTNADD_DETAIL = "//input[@class='button-1 add-to-cart-button']";
     public static String ICON_LOADING = "//div[@class='loading-image']";
     public static String BTN_UPDATECART = "//input[@name='updatecart']";
-    public static String PRODUCT_NOTREMOVED = "(//div[@class='name']//a)[index]";
+    public static String PRODUCT_NOTREMOVED = "(//td[@class='product']//a[@class='product-name'])[index]";
 
 
 }
