@@ -17,11 +17,29 @@ public class DigitalDownloadUI {
     public static String TXT_EMAIL = "//input[@id='BillingNewAddress_Email']";
     public static String COUNTRY = "//select[@id='BillingNewAddress_CountryId']";
     public static String TXT_CITY = "//input[@id='BillingNewAddress_City']";
-    public static String TXT_ADDRESS = "//input[@id='BillingNewAddress.Address1']";
+    public static String TXT_ADDRESS = "//input[@id='BillingNewAddress_Address1']";
     public static String TXT_ZIPCODE = "//input[@id='BillingNewAddress_ZipPostalCode']";
     public static String TXT_PHONE = "//input[@id='BillingNewAddress_PhoneNumber']";
     public static String BTN_CONTINUE = "//input[@class='button-1 new-address-next-step-button']";
-    public static String TITLE_PAYMENT_METHOD = "//li[@id='opc-payment_method']//h2";
-    public static String PAYMENT_OPTION_DEFAULF = "//label[contains(text(),'Cash On Delivery (COD) (7.00)')]";
+    public static String PAYMENT_METHOD_OPTION_DEFAULT = "//input[@id='paymentmethod_0']";
+    public static String PAYMENT_METHOD_BTN_CONTINUE = "//div[@id ='checkout-step-payment-method']//input[@value='Continue']";
+    public static String PAYMENT_INFO_MESSAGE = "//div[@class='section payment-info']//p";
+    public static String PAYMENT_INFO_BTN_CONTINUE = "//div[@id ='checkout-step-payment-info']//input[@value='Continue']";
+    public static String CONFIRM_NAME = "//li[@id='opc-confirm_order']//li[@class ='name']";
+    public static String CONFIRM_EMAIL = "//li[@id='opc-confirm_order']//li[@class ='email']";
+    public static String CONFIRM_PHONE = "//li[@id='opc-confirm_order']//li[@class ='phone']";
+    public static String CONFIRM_ADDRESS = "//li[@id='opc-confirm_order']//li[@class ='address1']";
+    public static String CONFIRM_CITYZIPCODE = "//li[@id='opc-confirm_order']//li[@class ='city-state-zip']";
+    public static String CONFIRM_COUNTRY = "//li[@id='opc-confirm_order']//li[@class ='country']";
+    public static String CONFIRM_PAYMENT = "//li[@id='opc-confirm_order']//li[@class ='payment-method']";
+    public static String SUBTOTAL = "//span[contains(text(),'Sub-Total:')]//ancestor::tr//span[@class='product-price']";
+    public static String PAYMENT_FREE = "an[contains(text(),'Payment method additional fee:')]//ancestor::tr//span[@class='product-price']";
+    public static String TOTAL_FREE = "//span[contains(text(),'Total:')]//ancestor::tr//span[@class='product-price order-total']/strong";
+    public static String BTN_CONFIRM = "//input[@class='button-1 confirm-order-next-step-button']";
+    public static String MESSAGE_COMPLETED = "//div[@class='section order-completed']//strong";
+    public static String BTN_CONTINUE_COMPLETED = "//input[@class='button-2 order-completed-continue-button']";
+
+
+
 
 }
