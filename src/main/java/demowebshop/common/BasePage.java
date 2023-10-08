@@ -1,5 +1,6 @@
 package demowebshop.common;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 public class BasePage {
@@ -565,6 +567,16 @@ public class BasePage {
     private String getDynamicLocator(String locator, String[] params) {
         return String.format(locator, (Object[]) params);
     }
+    public String generateEmail() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
+    };
+
+    public String randomphone() {
+        Locale locale = new Locale("vi-VN");
+        Faker faker = new Faker(locale);
+        return faker.phoneNumber().cellPhone().replaceAll(" ","");
+    };
 
 
 }

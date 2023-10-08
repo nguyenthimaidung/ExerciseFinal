@@ -12,5 +12,8 @@ public class PageGenerator {
     public static CartPageObject getCartPageObject(WebDriver driver){
         return new CartPageObject(driver);
     }
+    public static DigitalDownloadObject getDigitalDownloadPageObject(WebDriver driver){
+        return new DigitalDownloadObject(driver);
+    }
 
 }

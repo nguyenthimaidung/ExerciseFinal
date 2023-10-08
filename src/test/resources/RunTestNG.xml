@@ -5,6 +5,8 @@
     <test name="Test Exercise Final">
         <classes>
             <class name="demowebshop.features.login.LoginSuccessfully"/>
+            <class name="demowebshop.features.books.Buy2BooksHighestRated"/>
+            <class name="demowebshop.features.cart.RemoveItemOutOfShoppingCart"/>
         </classes>
     </test>
 </suite>

@@ -27,6 +27,7 @@ public class RemoveItemOutOfShoppingCart extends BaseTest {
         shoppingcart.addBookToCartAndVerify(nameProduct_2,"2");
         shoppingcart.addBookToCartAndVerify(nameProduct_3,"3");
         shoppingcart.openShoppingCart();
+        shoppingcart.verifyTitle("Demo Web Shop. Shopping Cart");
         shoppingcart.selectProductRemove(nameProduct_1);
         shoppingcart.verifyProductSelected(nameProduct_1);
         shoppingcart.clickBtnUpdateCart();
