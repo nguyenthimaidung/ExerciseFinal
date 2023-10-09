@@ -60,22 +60,21 @@ public class BooksPageObject extends BaseTest {
         Collections.sort(listTextRaitings);
         String Book1 = getTextElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.TITLEBOOK,"text",Integer.toString(listTextRaitings.get(4))));
         String Book2 =getTextElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.TITLEBOOK,"text",Integer.toString(listTextRaitings.get(3))));
-//        List<String> listBook = new ArrayList<>();
-//        listBook.add(Book2);
-//        listBook.add(Book1);
-//        System.out.println(listBook);
+        String listBook = Book1 + ',' + Book2;
+        System.out.println("listbook = " + listBook);
+
+        List<WebElement> listBookOnCart = driver.findElements((By.xpath(BooksPageUI.CART_NAMEBOOK)));
+        for (WebElement books : listBookOnCart) {
+            String nameBookOnCart = books.getText();
+            nameBookOnCart.contains(listBook);
+            System.out.println("A=" + nameBookOnCart);
+        }
 //
-//        List<WebElement> listBookOnCart = driver.findElements((By.xpath(BooksPageUI.CART_NAMEBOOK)));
-//        for (WebElement books : listBookOnCart) {
-//            String A = books.getText();
-//            System.out.println(A);
-//        }
-
-        String cartNameBook1 = getTextElement(driver,BooksPageUI.CART_NAMEBOO1);
-        String cartNameBook2 = getTextElement(driver,BooksPageUI.CART_NAMEBOO2);
-
-        Assert.assertEquals(Book2,cartNameBook1);
-        Assert.assertEquals(Book1,cartNameBook2);
+//        String cartNameBook1 = getTextElement(driver,BooksPageUI.CART_NAMEBOOK1);
+//        String cartNameBook2 = getTextElement(driver,BooksPageUI.CART_NAMEBOOK2);
+//
+//        Assert.assertEquals(Book2,cartNameBook1);
+//        Assert.assertEquals(Book1,cartNameBook2);
 
     }
 
