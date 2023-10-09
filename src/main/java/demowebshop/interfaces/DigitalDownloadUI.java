@@ -33,7 +33,7 @@ public class DigitalDownloadUI {
     public static String CONFIRM_COUNTRY = "//li[@id='opc-confirm_order']//li[@class ='country']";
     public static String CONFIRM_PAYMENT = "//li[@id='opc-confirm_order']//li[@class ='payment-method']";
     public static String SUBTOTAL = "//span[contains(text(),'Sub-Total:')]//ancestor::tr//span[@class='product-price']";
-    public static String PAYMENT_FREE = "an[contains(text(),'Payment method additional fee:')]//ancestor::tr//span[@class='product-price']";
+    public static String PAYMENT_FREE = "//span[contains(text(),'Payment method additional fee:')]//ancestor::tr//span[@class='product-price']";
     public static String TOTAL_FREE = "//span[contains(text(),'Total:')]//ancestor::tr//span[@class='product-price order-total']/strong";
     public static String BTN_CONFIRM = "//input[@class='button-1 confirm-order-next-step-button']";
     public static String MESSAGE_COMPLETED = "//div[@class='section order-completed']//strong";

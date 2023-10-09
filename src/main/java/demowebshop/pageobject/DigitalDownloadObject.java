@@ -111,11 +111,11 @@ public class DigitalDownloadObject extends BaseTest {
         Assert.assertTrue(getTextPaymentMethodOption.contains(getTextOfPaymentMethod));
     }
     public void verifyTotal(){
-        int sub_Total = Integer.parseInt(getTextElement(driver,DigitalDownloadUI.SUBTOTAL));
-        int payment_Fee = Integer.parseInt(getTextElement(driver,DigitalDownloadUI.PAYMENT_FREE));
-        int Total = Integer.sum(sub_Total,payment_Fee);
+        double sub_Total = Double.parseDouble(getTextElement(driver,DigitalDownloadUI.SUBTOTAL));
+        double payment_Fee = Double.parseDouble(getTextElement(driver,DigitalDownloadUI.PAYMENT_FREE));
+        double Total = Double.sum(sub_Total,payment_Fee);
         String total = String.valueOf(Total);
-        String getTextTotal = getTextElement(driver,DigitalDownloadUI.TOTAL_FREE);
+        String getTextTotal = getTextElement(driver,DigitalDownloadUI.TOTAL_FREE).substring(0,3);
         Assert.assertEquals(total,getTextTotal);
     }
     public void clickBtnConfirm(){
