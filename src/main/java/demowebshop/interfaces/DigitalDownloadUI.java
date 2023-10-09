@@ -21,7 +21,7 @@ public class DigitalDownloadUI {
     public static String TXT_ZIPCODE = "//input[@id='BillingNewAddress_ZipPostalCode']";
     public static String TXT_PHONE = "//input[@id='BillingNewAddress_PhoneNumber']";
     public static String BTN_CONTINUE = "//input[@class='button-1 new-address-next-step-button']";
-    public static String PAYMENT_METHOD_OPTION_DEFAULT = "//input[@id='paymentmethod_0']";
+    public static String PAYMENT_METHOD_OPTION_DEFAULT = "(//div[@class='payment-details']//label)[1]";
     public static String PAYMENT_METHOD_BTN_CONTINUE = "//div[@id ='checkout-step-payment-method']//input[@value='Continue']";
     public static String PAYMENT_INFO_MESSAGE = "//div[@class='section payment-info']//p";
     public static String PAYMENT_INFO_BTN_CONTINUE = "//div[@id ='checkout-step-payment-info']//input[@value='Continue']";

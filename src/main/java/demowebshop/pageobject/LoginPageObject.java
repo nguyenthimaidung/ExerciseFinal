@@ -36,6 +36,9 @@ public class LoginPageObject extends BaseTest {
         clickElement(driver, LoginPageUI.BTN_LOGIN);
         Log.allure("Login success");
     };
+    public void expectedMessage(String textcanchuyen, String textThay){
+        elementIsVisible(driver,LoginPageUI.CHANGEXPATH(LoginPageUI.MESSAGE,textcanchuyen,textThay));
+    }
     public void verifyMessage(String textcanchuyen, String textThay){
         elementIsVisible(driver,LoginPageUI.CHANGEXPATH(LoginPageUI.XPATHGOC,textcanchuyen,textThay));
     }

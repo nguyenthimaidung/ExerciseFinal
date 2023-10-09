@@ -54,8 +54,7 @@ public class BuyProductSuccess extends BaseTest {
         digital.verifyBillingAddress_Email(Email);
         digital.verifyBillingAddress_Phone(Phone);
         digital.verifyBillingAddress_Address(Address1);
-        String cityZipCodeInput = City + ',' + ZipCode;
-        System.out.println(cityZipCodeInput);
+        String cityZipCodeInput = City + ' '+ ','+' '+ ZipCode;
         digital.verifyBillingAddress_CityZipCode(cityZipCodeInput);
         digital.verifyBillingAddress_Country(Country);
         digital.verifyDataDisplayedPaymentMethod();

@@ -7,6 +7,7 @@
             <class name="demowebshop.features.login.LoginSuccessfully"/>
             <class name="demowebshop.features.books.Buy2BooksHighestRated"/>
             <class name="demowebshop.features.cart.RemoveItemOutOfShoppingCart"/>
+            <class name="demowebshop.features.digitaldownload.BuyProductSuccess"/>
         </classes>
     </test>
 </suite>

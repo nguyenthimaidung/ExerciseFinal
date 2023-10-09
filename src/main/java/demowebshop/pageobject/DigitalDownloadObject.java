@@ -97,8 +97,8 @@ public class DigitalDownloadObject extends BaseTest {
         Assert.assertTrue(getEmail.contains(addressInput));
     }
     public void verifyBillingAddress_CityZipCode(String cityZipCodeInput){
-        String getEmail = getTextElement(driver,DigitalDownloadUI.CONFIRM_CITYZIPCODE);
-        Assert.assertTrue(getEmail.contains(cityZipCodeInput));
+        String getCityZipCode = getTextElement(driver,DigitalDownloadUI.CONFIRM_CITYZIPCODE);
+        Assert.assertTrue(getCityZipCode.contains(cityZipCodeInput));
     }
     public void verifyBillingAddress_Country(String country){
         String getEmail = getTextElement(driver,DigitalDownloadUI.CONFIRM_COUNTRY);
@@ -106,7 +106,10 @@ public class DigitalDownloadObject extends BaseTest {
     }
     public void verifyDataDisplayedPaymentMethod(){
         String getTextOfPaymentMethod = getTextElement(driver,DigitalDownloadUI.CONFIRM_PAYMENT);
+        System.out.println("get: " + getTextOfPaymentMethod);
+
         String getTextPaymentMethodInput = getTextElement(driver,DigitalDownloadUI.PAYMENT_METHOD_OPTION_DEFAULT);
+        System.out.println("input: " + getTextPaymentMethodInput);
         Assert.assertTrue(getTextPaymentMethodInput.contains(getTextOfPaymentMethod));
     }
     public void verifyTotal(){
