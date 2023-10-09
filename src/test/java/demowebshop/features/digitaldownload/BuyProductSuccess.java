@@ -47,6 +47,7 @@ public class BuyProductSuccess extends BaseTest {
         digital.fillInfoBillingAddress(FirstName, LastName, Email, Country, City, Address1, ZipCode, Phone);
         digital.clickBtnContinue();
         digital.verifyPaymentMethodDisplayed();
+        digital.getTextPaymentMethodOption();
         digital.clickBtnContinuePayment();
         digital.verifyPaymentInfoDisplayed();
         digital.clickBtnContinuePaymentInfo();

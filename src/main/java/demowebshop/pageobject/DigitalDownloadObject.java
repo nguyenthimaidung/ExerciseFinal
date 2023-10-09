@@ -70,6 +70,7 @@ public class DigitalDownloadObject extends BaseTest {
         elementIsVisible(driver,DigitalDownloadUI.PAYMENT_METHOD_BTN_CONTINUE);
         checkToDefaultCheckboxOrDefaultRadio(driver,DigitalDownloadUI.PAYMENT_METHOD_OPTION_DEFAULT);
     }
+
     public void clickBtnContinuePayment(){
         clickElement(driver,DigitalDownloadUI.PAYMENT_METHOD_BTN_CONTINUE);
     }
@@ -104,13 +105,13 @@ public class DigitalDownloadObject extends BaseTest {
         String getEmail = getTextElement(driver,DigitalDownloadUI.CONFIRM_COUNTRY);
         Assert.assertTrue(getEmail.contains(country));
     }
+
+
+
     public void verifyDataDisplayedPaymentMethod(){
         String getTextOfPaymentMethod = getTextElement(driver,DigitalDownloadUI.CONFIRM_PAYMENT);
         System.out.println("get: " + getTextOfPaymentMethod);
-
-        String getTextPaymentMethodInput = getTextElement(driver,DigitalDownloadUI.PAYMENT_METHOD_OPTION_DEFAULT);
-        System.out.println("input: " + getTextPaymentMethodInput);
-        Assert.assertTrue(getTextPaymentMethodInput.contains(getTextOfPaymentMethod));
+        Assert.assertTrue(getTextPaymentMethodOption.contains(getTextOfPaymentMethod));
     }
     public void verifyTotal(){
         int sub_Total = Integer.parseInt(getTextElement(driver,DigitalDownloadUI.SUBTOTAL));
