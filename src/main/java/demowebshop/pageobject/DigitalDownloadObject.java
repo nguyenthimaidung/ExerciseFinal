@@ -66,9 +66,9 @@ public class DigitalDownloadObject extends BaseTest {
         clickElement(driver,DigitalDownloadUI.BTN_CONTINUE);
 
     }
-    public void verifyPaymentMethodDisplayed(){
+    public void verifyPaymentMethodDisplayed(String textCanChuyen, String textThay){
         elementIsVisible(driver,DigitalDownloadUI.PAYMENT_METHOD_BTN_CONTINUE);
-        checkToDefaultCheckboxOrDefaultRadio(driver,DigitalDownloadUI.PAYMENT_METHOD_OPTION_DEFAULT);
+        checkToDefaultCheckboxOrDefaultRadio(driver,DigitalDownloadUI.CHANGEXPATH(DigitalDownloadUI.PAYMENT_METHOD_OPTION_DEFAULT,textCanChuyen, textThay));
     }
 
     public void clickBtnContinuePayment(){
@@ -106,11 +106,8 @@ public class DigitalDownloadObject extends BaseTest {
         Assert.assertTrue(getEmail.contains(country));
     }
 
-
-
-    public void verifyDataDisplayedPaymentMethod(){
+    public void verifyDataDisplayedPaymentMethod(String getTextPaymentMethodOption){
         String getTextOfPaymentMethod = getTextElement(driver,DigitalDownloadUI.CONFIRM_PAYMENT);
-        System.out.println("get: " + getTextOfPaymentMethod);
         Assert.assertTrue(getTextPaymentMethodOption.contains(getTextOfPaymentMethod));
     }
     public void verifyTotal(){

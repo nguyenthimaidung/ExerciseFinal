@@ -26,6 +26,7 @@ public class BuyProductSuccess extends BaseTest {
     String City = "Ha Noi";
     String Address1 = "18 Ton That Thuyet";
     String ZipCode = "1111";
+    String optionPayment = "Cash On Delivery (COD) (7.00)";
     String Phone = randomphone();
 
     @Test()
@@ -46,8 +47,7 @@ public class BuyProductSuccess extends BaseTest {
         digital.verifyPageDisplayed("https://demowebshop.tricentis.com/onepagecheckout");
         digital.fillInfoBillingAddress(FirstName, LastName, Email, Country, City, Address1, ZipCode, Phone);
         digital.clickBtnContinue();
-        digital.verifyPaymentMethodDisplayed();
-        digital.getTextPaymentMethodOption();
+        digital.verifyPaymentMethodDisplayed("Option",optionPayment);
         digital.clickBtnContinuePayment();
         digital.verifyPaymentInfoDisplayed();
         digital.clickBtnContinuePaymentInfo();
@@ -58,7 +58,7 @@ public class BuyProductSuccess extends BaseTest {
         String cityZipCodeInput = City + ' '+ ','+' '+ ZipCode;
         digital.verifyBillingAddress_CityZipCode(cityZipCodeInput);
         digital.verifyBillingAddress_Country(Country);
-        digital.verifyDataDisplayedPaymentMethod();
+        digital.verifyDataDisplayedPaymentMethod(optionPayment);
         digital.verifyTotal();
         digital.clickBtnConfirm();
         digital.verifyMessageCompleted();
