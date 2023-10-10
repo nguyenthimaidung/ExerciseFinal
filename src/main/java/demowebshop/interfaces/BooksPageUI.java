@@ -15,6 +15,9 @@ public class BooksPageUI {
     public static String CHANGEXPATH(String xpath, String textCanChuyen, String textThay) {
         return xpath.replace(textCanChuyen, textThay);
     }
+    public static String CART_QUANTITY = "//a[@class='ico-cart']//span[@class ='cart-qty']";
+
+
 
 
 

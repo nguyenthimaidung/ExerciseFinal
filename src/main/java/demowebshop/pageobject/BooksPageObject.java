@@ -36,18 +36,19 @@ public class BooksPageObject extends BaseTest {
         for (WebElement rating : listRating) {
             listTextRaitings.add(Integer.parseInt(rating.getAttribute("style").substring(7,9)));
         }
-        Collections.sort(listTextRaitings);
+        Collections.sort(listTextRaitings,Collections.reverseOrder());
         for (Integer listText : listTextRaitings) {
             System.out.println(listText);
         }
-        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(4))));
+        for (int i=1; i < 3; i++){
+        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(i))));
         elementIsVisible(driver,BooksPageUI.MESSAGE);
-        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number","1"));
-        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(3))));
-        elementIsVisible(driver,BooksPageUI.MESSAGE);
-        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number","2"));
+        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number",String.valueOf(i)));
+//        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(i))));
+//        elementIsVisible(driver,BooksPageUI.MESSAGE);
+//        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number","2"));
 
-    }
+    }}
     public void hoverOnShoppingCart(){
         hoverMouseToElement(driver,BooksPageUI.SHOPPINGCART);
     }
