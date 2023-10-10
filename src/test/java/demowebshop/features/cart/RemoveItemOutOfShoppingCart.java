@@ -4,8 +4,12 @@ import demowebshop.common.BaseTest;
 import demowebshop.pageobject.BooksPageObject;
 import demowebshop.pageobject.CartPageObject;
 import demowebshop.pageobject.PageGenerator;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+
 
 public class RemoveItemOutOfShoppingCart extends BaseTest {
     WebDriver driver;
@@ -19,6 +23,10 @@ public class RemoveItemOutOfShoppingCart extends BaseTest {
         driver = getDriverBrowser(browser);
         shoppingcart = PageGenerator.getCartPageObject(driver);
     }
+    @Epic("demowebshop")
+    @Feature("CartPageObjet")
+    @Story("RemoveBookOutOfCart")
+
     @Test()
     public void TCO3_RemoveBookOutOfCart ()  {
         shoppingcart.gotoURL("https://demowebshop.tricentis.com/");

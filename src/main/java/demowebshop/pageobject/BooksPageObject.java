@@ -44,9 +44,12 @@ public class BooksPageObject extends BaseTest {
         clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(i))));
         elementIsVisible(driver,BooksPageUI.MESSAGE);
         elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number",String.valueOf(i)));
-//        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(i))));
+//        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(4))));
 //        elementIsVisible(driver,BooksPageUI.MESSAGE);
-//        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number","2"));
+//        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number","1"));
+//        clickElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.BTNADDTOCART,"text",Integer.toString(listTextRaitings.get(3))));
+//        elementIsVisible(driver,BooksPageUI.MESSAGE);
+//        elementIsVisible(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.NUMBERITEM,"number","1"));
 
     }}
     public void hoverOnShoppingCart(){

@@ -4,6 +4,9 @@ import demowebshop.common.BaseTest;
 import demowebshop.pageobject.CartPageObject;
 import demowebshop.pageobject.DigitalDownloadObject;
 import demowebshop.pageobject.PageGenerator;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -28,6 +31,10 @@ public class BuyProductSuccess extends BaseTest {
     String ZipCode = "1111";
     String optionPayment = "Cash On Delivery (COD) (7.00)";
     String Phone = randomphone();
+
+    @Epic("demowebshop")
+    @Feature("DigitalDownloadPageObject")
+    @Story("BuyProductSuccess")
 
     @Test()
     public void TCO4_BuyProductSuccess() {
