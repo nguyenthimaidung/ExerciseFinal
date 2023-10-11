@@ -70,8 +70,9 @@ public class BooksPageObject extends BaseTest {
         //String listBook = Book1 + ',' + Book2;
 
         List<WebElement> listBookOnCart = driver.findElements((By.xpath(BooksPageUI.CART_NAMEBOOK)));
-        listBookOnCart.get(0).getText().equals(Book2);
-        listBookOnCart.get(1).getText().equals(Book1);
+        Assert.assertEquals(listBookOnCart.get(0).getText(),Book2);
+        Assert.assertEquals(listBookOnCart.get(1).getText(),Book1);
+
 //
 //        String cartNameBook1 = getTextElement(driver,BooksPageUI.CART_NAMEBOOK1);
 //        String cartNameBook2 = getTextElement(driver,BooksPageUI.CART_NAMEBOOK2);
