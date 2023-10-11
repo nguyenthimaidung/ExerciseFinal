@@ -15,6 +15,7 @@ public class CartPageUI {
     public static String ICON_LOADING = "//div[@class='loading-image']";
     public static String BTN_UPDATECART = "//input[@name='updatecart']";
     public static String PRODUCT_NOTREMOVED = "(//td[@class='product']//a[@class='product-name'])[index]";
+    public static String CART_QUANTITY = "//a[@class='ico-cart']//span[@class ='cart-qty']";
 
 
 }

@@ -57,22 +57,21 @@ public class BooksPageObject extends BaseTest {
     }
     public void verifyBooksOnShoppingCart(){
         List<WebElement> listRating = driver.findElements((By.xpath(BooksPageUI.LISTRATING)));
-        List<Integer> listTextRaitings = new ArrayList<>();
+        List<Integer> listTextRatings = new ArrayList<>();
         for (WebElement rating : listRating) {
-            listTextRaitings.add(Integer.parseInt(rating.getAttribute("style").substring(7,9)));
+            listTextRatings.add(Integer.parseInt(rating.getAttribute("style").substring(7,9)));
         }
-        Collections.sort(listTextRaitings);
-        String Book1 = getTextElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.TITLEBOOK,"text",Integer.toString(listTextRaitings.get(4))));
-        String Book2 =getTextElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.TITLEBOOK,"text",Integer.toString(listTextRaitings.get(3))));
-        String listBook = Book1 + ',' + Book2;
-        System.out.println("listbook = " + listBook);
+        Collections.sort(listTextRatings);
+
+        String Book1 = getTextElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.TITLEBOOK,"text",Integer.toString(listTextRatings.get(4))));
+
+        String Book2 =getTextElement(driver,BooksPageUI.CHANGEXPATH(BooksPageUI.TITLEBOOK,"text",Integer.toString(listTextRatings.get(3))));
+
+        //String listBook = Book1 + ',' + Book2;
 
         List<WebElement> listBookOnCart = driver.findElements((By.xpath(BooksPageUI.CART_NAMEBOOK)));
-        for (WebElement books : listBookOnCart) {
-            String nameBookOnCart = books.getText();
-            nameBookOnCart.contains(listBook);
-            System.out.println("A=" + nameBookOnCart);
-        }
+        listBookOnCart.get(0).getText().equals(Book2);
+        listBookOnCart.get(1).getText().equals(Book1);
 //
 //        String cartNameBook1 = getTextElement(driver,BooksPageUI.CART_NAMEBOOK1);
 //        String cartNameBook2 = getTextElement(driver,BooksPageUI.CART_NAMEBOOK2);

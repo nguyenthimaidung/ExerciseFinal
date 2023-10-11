@@ -38,8 +38,7 @@ public class RemoveItemOutOfShoppingCart extends BaseTest {
         shoppingcart.verifyTitle("Demo Web Shop. Shopping Cart");
         shoppingcart.selectProductRemove(nameProduct_1);
         shoppingcart.verifyProductSelected(nameProduct_1);
-        shoppingcart.clickBtnUpdateCart();
-        shoppingcart.productAfterRemove("1","2",nameProduct_2,nameProduct_3,"2");
+        shoppingcart.clickBtnUpdateCart("1","2",nameProduct_2,nameProduct_3);
 
     }
     @AfterMethod(alwaysRun = true)

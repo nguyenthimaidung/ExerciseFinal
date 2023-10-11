@@ -53,18 +53,27 @@ public class CartPageObject extends BaseTest {
         WebElement verifySelected = driver.findElement(By.xpath(CartPageUI.CHANGEXPATH(CartPageUI.CHECKBOX_REMOVE,"nameProduct",nameProduct)));
         Assert.assertTrue(verifySelected.isSelected());
     }
-    public void clickBtnUpdateCart (){
+    public void clickBtnUpdateCart (String index_1,String index_2,String productAdded1,String productAdded2){
+        String numberBeforeRemove = getTextElement(driver,CartPageUI.CART_QUANTITY).substring(1,2);
         clickElement(driver,CartPageUI.BTN_UPDATECART);
-    }
-    public void productAfterRemove(String index_1,String index_2,String productAdded1,String productAdded2,String number){
         String product_1 = getTextElement(driver,CartPageUI.CHANGEXPATH(CartPageUI.PRODUCT_NOTREMOVED,"index",index_1));
-        System.out.println("1" + product_1);
         String product_2 = getTextElement(driver,CartPageUI.CHANGEXPATH(CartPageUI.PRODUCT_NOTREMOVED,"index",index_2));
-        System.out.println("2" + product_2);
-
         Assert.assertEquals(product_1,productAdded1);
         Assert.assertEquals(product_2,productAdded2);
-        elementIsVisible(driver,CartPageUI.CHANGEXPATH(CartPageUI.NUMBERITEM,"number",number));
+        String numberAfterRemove = getTextElement(driver,CartPageUI.CART_QUANTITY).substring(1,2);
+
+        String expectNumber =  String.valueOf(Integer.parseInt(numberBeforeRemove) -1);
+        Assert.assertEquals(expectNumber,numberAfterRemove);
     }
+//    public void productAfterRemove(String index_1,String index_2,String productAdded1,String productAdded2,String number){
+//        String product_1 = getTextElement(driver,CartPageUI.CHANGEXPATH(CartPageUI.PRODUCT_NOTREMOVED,"index",index_1));
+//        System.out.println("1" + product_1);
+//        String product_2 = getTextElement(driver,CartPageUI.CHANGEXPATH(CartPageUI.PRODUCT_NOTREMOVED,"index",index_2));
+//        System.out.println("2" + product_2);
+//
+//        Assert.assertEquals(product_1,productAdded1);
+//        Assert.assertEquals(product_2,productAdded2);
+//        elementIsVisible(driver,CartPageUI.CHANGEXPATH(CartPageUI.NUMBERITEM,"number",number));
+//    }
 
 }
